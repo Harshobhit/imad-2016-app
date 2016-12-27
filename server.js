@@ -30,8 +30,8 @@ app.get('/userlogin', function (req, res) {
       }
       else
       {
-          var a=result.rows[0];
-          res.send(createTemplate(a));
+          res.send(JSON.stringify(result.rows));
+          
       }
 });
 });
