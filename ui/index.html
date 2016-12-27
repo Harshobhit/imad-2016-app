@@ -1,22 +1,523 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      
-      <script type="text/javascript">
+
+<style>
+* {
+	margin:0px;
+	padding:0px;
+}
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing: border-box; }
+
+.clearfix:before, .clearfix:after { display: table; content: ''; }
+.clearfix:after { clear: both; }
+
+
+body {
+	background: #E2e2e2;
+	color: #333;
+	font-weight: normal;
+	font-size: 1em;
+	font-family: 'Roboto', Arial, sans-serif;
+}
+
+input:focus, textarea:focus, keygen:focus, select:focus {
+	outline: none;
+}
+::-moz-placeholder {
+	color: #666;
+	font-weight: 300;
+	opacity: 1;
+}
+
+::-webkit-input-placeholder {
+	color: #666;
+	font-weight: 300;
+}
+
+.grid .col2 {
+	width: 50%;
+	padding: 0 10px 0 0;
+}
+.grid .col2.first {
+	float: left;
+}
+.grid .col2.last {
+	float: right;
+}
+
+.grid .col3 {
+	width: 32%;
+	float: left;
+	margin-right: 11px;
+}
+.grid .col3.first {
+	margin-left: 0;
+	float: left;
+}
+.grid .col3.last {
+	margin-right: 0;
+	float: right;
+}
+
+/* profile page */
+.container {
+    padding: 60px 50px 70px;
+}
+
+.innerwrap {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.section1 {
+	background: #fff;
+	position: relative;
+	border-radius: 2px;
+}
+.section1 div .row:first-child {
+	padding: 25px;
+}
+
+
+.section1 .col2.first img {
+	border-radius: 50%;
+	margin: 0 20px;
+	width: 120px;
+	border:2px solid #f1f1f1;
+	padding: 2px;
+	float: left;
+}
+.section1 .col2.first {
+	line-height: 25px;
+	position: relative;
+	border-right:1px solid #a2a2a2;
+}
+.section1 .col2.first h1 {
+    font-weight: normal;
+    margin-bottom: 10px;
+	margin-top: 15px;
+	text-transform: capitalize;
+}
+.section1 .col2.first p {
+	font-size: 14px;
+}
+.section1 .col2.first span {
+	position: absolute;
+    right: 15px;
+    top: 16px;
+    background: #6AAFEA;
+    padding: 5px 11px;
+    font-size: 12px;
+    line-height: 1;
+    border-radius: 2px;
+    color: #fff;
+  cursor:pointer;
+}
+
+.section1 .col2.last {
+	padding: 8px 0;
+}
+.section1 .col2.last .col3 span {
+    color: #a2a2a2;
+    font-size: 14px;
+}
+.section1 .col2.last .col3 h1 {
+    color: #FB4C22;
+}
+
+.section1 .col2.last .col3 {
+    text-align: center;
+    line-height: 30px;
+    border-right: 1px solid #ccc;
+}
+.section1 .col2.last .col3.last {
+	border-right: 0;
+}
+
+.row2tab li {
+    list-style: none;
+    float: left;
+    width: 25%;
+    padding: 15px;
+    font-size: 14px;
+    text-align: center;
+    cursor:pointer;
+    background: #f1f1f1;
+    color: #555;
+    border-bottom: 2px solid #f1f1f1;
+}
+.row2tab li:first-child {
+    border-bottom: 2px solid #6AAFEA;
+    border-radius: 0 0 2px 2px;
+}
+.row2tab li:first-child {
+	color:  #6AAFEA;
+}
+.row2tab li i {
+        margin-right: 3px;
+    font-size: 14px;
+}
+
+.smalltri {
+	    border-right: 40px solid #6AAFEA;
+    height: 0;
+    width: 0;
+    border-left: 20px solid transparent;
+    border-top: 10px solid #6AAFEA;
+    border-bottom: 20px solid transparent;
+    padding: 0px;
+    top: 0;
+    right: 0;
+    position: absolute;
+}
+.smalltri i {
+    position: absolute;
+    top: -5px;
+    right: -33px;
+    color: #fff;
+    border: 0px;
+    font-size: 12px;
+}
+
+section.section2 {
+    margin: 50px 0;
+}
+
+.section2 .col3 {
+	width: 30%;
+	margin-right: 60px;
+	background: #fff;
+	border-radius: 2px;
+}
+
+.section2 .postcont img {
+
+	width: 100%;
+}
+.section2 .profileinfo {
+    text-align: center;
+    padding: 0 10px 30px;
+    color: #555;
+    font-size: 14px;
+    line-height: 25px;
+}
+.section2 .profileinfo img {
+    border-radius: 50%;
+    width: 80px;
+    padding: 2px;
+    border: 3px solid #6AAFEA;
+    margin-top: -48px;
+    margin-bottom: 18px;
+}
+.section2 .col3.center .profileinfo img {
+    border: 3px solid #FB4C22;
+
+}
+.section2 .profileinfo p {
+	text-align: justify;
+}
+.section2 .profileinfo span {
+	margin-top: 15px;
+    display: block;
+    text-align: left;
+    color: #6AAFEA;
+    cursor: pointer;
+}
+.section2 .profileinfo span i {
+	margin-left: 10px;
+}
+
+@media only screen and (max-width: 1300px) {
+	.innerwrap {
+		width: 90%;
+	}
+	.section2 .col3 {
+		margin-right: 5%;
+	}
+	.section1 .grid .col3 {
+		margin-right: 2%;
+	}
+	.section1 .col2.last .col3.last {
+		margin-right: 0;
+	}
+}
+
+@media only screen and (max-width: 1060px) {
+	.section1 .col2 {
+		width: 100%;
+		border-right:0 !important;
+		padding: 0;
+	}
+}
+
+@media only screen and (max-width: 660px) {
+	.section2 .col3 {
+		width: 100%;
+		float: none !important;
+		margin-bottom: 10px;
+	}
+	.row2tab li {
+		width: 50%;
+		text-align: left;
+	}
+	.section1 .col2.first {
+		text-align: center;
+	}
+	.section1 .col2.first img {
+		display: inline-block;
+		float: none;
+	}
+	.section1 .col2.first span {
+		position: relative;
+		right: 0;
+	}
+  .section1 .col2.last {
+    margin-top:25px;
+  }
+}
+@media only screen and (max-width: 450px) {
+	.container {
+    padding: 60px 5px 70px;
+}
+  .row2tab li {
+		width: 100%;
+		text-align: left;
+	}
+	.section1 .col2.last .col3 span {
+		font-size: 10px;
+	}
+	.section1 .col2.last .col3 h1 {
+		font-size: 18px;
+	}
+.back-to-top {
+
+background: none;
+
+margin: 0;
+
+position: fixed;
+
+bottom: 0;
+
+right: 0;
+
+width: 70px;
+
+height: 70px;
+
+z-index: 100;
+
+display: none;
+
+text-decoration: none;
+
+color: #ffffff;
+
+background-color: #ff9000;
+
+}
+.algn{text-align: center;} 
+	
+}
+.clk{ 
+    text-align: center;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    align:right;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: yellow;
+    color: black;
+    border: 2px  blue;
+}  
+
+</style>
          
-            function Redirect() {
-               window.location="http://www.tutorialspoint.com";
-            }
-      </script>
-      
-   </head>
-   
-   <body>
-      <p>Click the following button, you will be redirected to home page.</p>
-      
-      <form>
-         <input type="button" value="Redirect Me" onclick="Redirect();" />
-      </form>
-      
-   </body>
+         <script type="text/javascript">
+            
+               function Redirect() {
+                  window.location="http://www.tutorialspoint.com";
+               }
+         </script>
+         
+      </head>
+<body>
+
+<div class="container">
+	<div class="innerwrap">
+		<section class="section1 clearfix">
+			<div>
+				<div class="row grid clearfix">
+					<div class="col2 first">
+						<img src="https://media.licdn.com/mpr/mpr/shrink_100_100/AAEAAQAAAAAAAAipAAAAJDgxNTI5MzNkLTg3NzUtNGM1OC1hZGQxLWRlMjBhNzhiZTE3Nw.jpg" alt="">
+						<h1>Har Shobhit Dayal</h1>
+						     
+         <form>
+            <input type="button" value="Redirect Me" onclick="Redirect();" />
+         </form>
+						<p>I am a second year BTech CSE Student in Vellore Institute of Technology,Chennai.</p>
+						<p>PhoneNo:9537264094<br>EmailId:dayalharshobhit@gmail.com</p>
+					</div>
+					<a name="top"></a>	
+					<div class="col2 last">
+						<div class="grid clearfix">
+							<div class="col3 first">
+								<h1>18</h1>
+								<span>Age</span>
+							</div>
+							<div class="col3"><h1>Male</h1>
+							<span>Gender</span></div>
+							<div class="col3 last"><h1>29/01/1998</h1>
+							<span>Date of Birth</span></div>
+						</div>
+					</div>
+				</div>
+				<div class="row clearfix">
+					<ul class="row2tab clearfix">
+						<a href="#menu"><li><i class="fa fa-list-alt"></i>My likes</li></a>
+						<a href="#menu1"><li><i class="fa fa-heart"></i> My hobbies </li></a>
+						<a href="#menu2"><li><i class="fa fa-check"></i> My strengths</li></a>
+						<a href="#menu3"><li><i class="fa fa-thumbs-o-up "></i> My Skills </li></a>
+					</ul>
+				</div>
+			</div>
+			<span class="smalltri">
+			<i class="fa fa-star"></i>
+			</span>
+		</section>
+		<div id="menu">
+		<section class="section2 clearfix">
+			<div class="grid">
+				<div class="col3 first">
+					<div class="postcont"><img src="http://wallpapercave.com/wp/HR03lzA.jpg" alt="not found connect to internet">
+					</div>
+					<div class="profileinfo">
+						<p><b>Football:</b><br>
+						I am an avid football follower.I am  a Liverpool Football Club Fan Supporter and my favourite player is Lionel Messi who plays for FC Barcelona</p>
+					</div>
+				</div>
+				<div class="col3 center">
+					<div class="postcont"><img src="http://www.alux.com/wp-content/uploads/2015/07/plane.jpg" alt="not found connect to internet">
+					</div>
+					<div class="profileinfo">
+						<p><b>Travelling:</b><br>
+						I love to travel  and explore new places.One of my favourite places is Ferrari World in Abu Dhabhi.</p>
+					</div>
+				</div>
+				<div class="col3 last">
+					<div class="postcont"><img src="https://i.ytimg.com/vi/awjasLEsQD4/maxresdefault.jpg" alt="">
+					</div>
+					<div class="profileinfo">
+					<p><b>Agatha Christie:</b><br>
+						I love to read murder mystery books written by Agatha Christie.My favourite novel is Murder On the Orient Express</p>
+					</div>
+				</div>
+			</div>
+		<div class="algn" align="right"><button type="button" class="clk"><a href="#top">Back To Top</a></button></div>
+		</section>
+		<div id="menu1">
+		<section class="section2 clearfix">
+			<div class="grid">
+				<div class="col3 first">
+					<div class="postcont"><img src="http://piano-learning.com/wp-content/uploads/2011/11/piano-1011440_1920.jpg" alt="sds">
+					</div>
+					<div class="profileinfo">
+					<p><b>Piano:</b><br>
+						My main hobby is to play paino.Whenever I get free time I spent it with playing piano.I have been learning piano since 8th class. </p>
+					</div>
+				</div>
+				<div class="col3 center">
+					<div class="postcont"><img src="http://www.planwallpaper.com/static/images/Football-players-final-render-7.jpg" alt="">
+					</div>
+					<div class="profileinfo">
+					<p><b>Play Football:</b><br>
+						I love to play football and I am a Central Defence Midfielder and I have great dribbling skills.</p>
+					</div>
+				</div>
+				<div class="col3 last">
+					<div class="postcont"><img src="https://i.ytimg.com/vi/ke4YJKbTTC8/maxresdefault.jpg" alt="">
+					</div>
+					<div class="profileinfo">
+					<p><b>PC Gaming:</b><br>
+						I love to play pc games and my favourite game is Bioshock:Infinite</p>
+					</div>
+				</div>
+			</div>
+				
+		</section>
+		<div class="algn" align="right"><button type="button" class="clk"><a href="#top">Back To Top</a></button></div>
+		</div>
+
+		<div id="menu2">
+		<section class="section2 clearfix">
+			<div class="grid">
+				<div class="col3 first">
+					<div class="postcont"><img src="http://previews.123rf.com/images/hatza/hatza1204/hatza120400174/13165370-hard-working-word-written-on-chalk-board-Stock-Vector.jpg" alt="sds">
+					</div>
+					<div class="profileinfo">
+						<p>My main strength is that i am very hard working and try my best to complete the work alloted to me in time. </p>
+					</div>
+				</div>
+				<div class="col3 center">
+					<div class="postcont"><img src="http://donteversaynever.com/wp-content/uploads/2016/06/2286-Bill-Gates-Quote-Patience-is-a-key-element-of-success.jpg" alt="">
+					</div>
+					<div class="profileinfo">
+						<p>I have a lot of patience and can handle tough situations.</p>
+					</div>
+				</div>
+				<div class="col3 last">
+					<div class="postcont"><img src="http://www.clipartkid.com/images/36/team-work-bigstock-teamwork-48863816-clipart-aGlvmA-clipart.jpg" alt="">
+					</div>
+					<div class="profileinfo">
+						<p>I am a team player and can easily co-operate and work in a team.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="algn" align="right"><button type="button" class="clk"><a href="#top">Back To Top</a></button></div>
+		</div>
+
+		<div id="menu3">
+		<section class="section2 clearfix">
+			<div class="grid">
+				<div class="col3 first">
+					<div class="postcont"><img src="http://3.bp.blogspot.com/-etcRcSlYRR0/VUuVUl--rgI/AAAAAAAANXw/uyqI9tcZ050/s1600/Arduino%2B1.6.4.png" alt="sds">
+					</div>
+					<div class="profileinfo">
+					<p><b>Robotics:</b><br>
+						I have gained skill in the field of robotics and can integrate harware and software components using Arduino IDE</p>
+					</div>
+				</div>
+				<div class="col3 center">
+					<div class="postcont"><img src="http://themerkle.com/wp-content/uploads/2015/07/debate.jpg" alt="">
+					</div>
+					<div class="profileinfo">
+					<p><b>Debate:</b><br>
+						I have been developing the art of debating from class 8 and I have won many prizes in debating during my school days. </p>
+					</div>
+				</div>
+				<div class="col3 last">
+					<div class="postcont"><img src="https://media.licdn.com/mpr/mpr/shrinknp_800_800/AAEAAQAAAAAAAAIXAAAAJDQ5ODFmZGZhLWE4NzYtNDEzMS05YjQ0LTFlOWJiMWJlODQyYg.jpg" alt="">
+					</div>
+					<div class="profileinfo">
+						<p><b>C/C++/PHP/MySQL</b><br>
+						I have developed these skills during the 1.5 years of my college life.I can code in C/C++ and also can act as a back end developer as I can easily manage PHP and MySQL</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="algn" align="right"><button type="button" class="clk"><a href="#top">Back To Top</a></button></div>
+		</div>
+	</div>
+</div>	
+</div>
+<p id="demo"></p>
+</body>
 </html>
