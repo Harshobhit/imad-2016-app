@@ -9,7 +9,22 @@ var config = {
    port:'5432',
   password: 'db-harshobhit-11999'
 };
-
+function createTemplate(data)
+{
+    var name=data.name;
+    var email=data.emailid;
+    var password=data.password;
+    var htmlTemplate=`<html>
+    <head>
+    <title>Football</title>
+    </head>
+    <body>
+    <h1> ${name}</h1>;
+    <h2> ${email}</h1>;
+    </body>
+    </html>`;
+    return htmlTemplate;
+}
 var app = express();
 app.use(morgan('combined'));
 var counter=0;
