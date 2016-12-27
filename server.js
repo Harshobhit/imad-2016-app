@@ -6,7 +6,6 @@ var config = {
   user: 'harshobhit',
    database: 'harshobhit',
    host:'localhost:5432',
-   port:'5432',
   password: process.env.DB_PASSWORD
 };
 
