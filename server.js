@@ -23,7 +23,7 @@ app.get('/', function (req, res) {
 });
 var pool = new Pool(config);
 app.get('/userlogin', function (req, res) {
-  pool.query('SELECT * FROM d',function(err,result){
+  pool.query('SELECT * FROM user',function(err,result){
       if(err)
       {
           res.status(500).send(err.toString());
