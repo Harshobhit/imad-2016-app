@@ -3,11 +3,10 @@ var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
 var config = {
+    host: 'localhost:5432',
   user: 'harshobhit',
-   database: 'harshobhit',
-   host:'harshobhit.imad.hasura-app.io',
-   port:'5432',
-  password: process.env.DB_PASSWORD
+  password: 'db-harshobhit-11999',
+  database: 'harshobhit',
 };
 
 var app = express();
@@ -24,8 +23,14 @@ app.get('/', function (req, res) {
 var pool = new Pool(config);
 app.get('/userlogin', function (req, res) {
   pool.query('SELECT * FROM user',function(err,result){
-      res.send(JSON.stringify(result));
-
+      if(err)
+      {
+          res.status(500).send(err.toString());
+      }
+      else
+      {
+          res.send(JSON.stringify(result));
+      }
 });
 });
 
