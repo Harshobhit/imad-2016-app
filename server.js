@@ -3,10 +3,11 @@ var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
 var config = {
-    host: 'localhost:5432',
   user: 'harshobhit',
-  password: 'db-harshobhit-11999',
-  database: 'harshobhit',
+   database: 'harshobhit',
+   host:'localhost:5432',
+   port:'5432',
+  password: process.env.DB_PASSWORD
 };
 
 var app = express();
