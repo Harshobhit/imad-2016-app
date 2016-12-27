@@ -7,7 +7,7 @@ var config = {
    database: 'harshobhit',
    host:'harshobhit.imad.hasura-app.io',
    port:'5432',
-  password: 'db-harshobhit-11999'
+  password: process.env.DB_PASSWORD
 };
 
 var app = express();
