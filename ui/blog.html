@@ -143,6 +143,13 @@ span.psw {
 }
 .nav-tabs>li.active>a{text-decoration: underline darkgreen;}
 </style>
+  <script type="text/javascript">
+            
+               function Redirect() {
+                  window.location="http://harshobhit.imad.hasura-app.io/blog";
+               }
+         </script>
+         
 </head>
 <body>
 <div class="container">
@@ -175,7 +182,7 @@ span.psw {
 						<label><b>Password</b></label>
 						<input type="password" placeholder="Enter Password" name="psw" required>
 							
-						<button type="submit">Login</button>
+						<button type="submit" onclick="Redirect();">Login</button>
 						<button onclick="document.getElementById('id01').style.display='block'" class='cancelbtn2'>Sign Up!</button>
 					  </div>
 					</form>
