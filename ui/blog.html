@@ -1,7 +1,206 @@
 <!DOCTYPE html>
-<html>
-    <body>
-    asdasdasd    
-    </body>
+<html lang="en">
+<head>
+  <title>Football Blog</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="External/bootstrap.css">
+    <script src="External/jquery2.js"></script>
+    <script src="External/bootstrap.js"></script>  
+    <script type="text/javascript" src="External/jquery.js"></script>    
+  <script>
+var modal = document.getElementById('id01');
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+  <style>
+/* Full-width input fields */
+input[type=text], input[type=password],input[type=number],input[type=email],select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+.cancelbtn2{
+    background-color: #f44336;
+    color: white;
+    padding: 10px 18px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
     
-</html>
+@keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+.nav-tabs>li.active>a{text-decoration: underline darkgreen;}
+</style>
+</head>
+<body>
+<div class="jumbotron" style="background-image:url('https://i.ytimg.com/vi/-mNPS9PKchE/maxresdefault.jpg')">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8"></div>
+			<div class="col-sm-4" style="background-color:white;padding:5px;">
+				<ul class="nav nav-tabs">
+				  <li class="active"><a data-toggle="tab" href="#student">Login</a></li>
+				</ul>
+				
+				<div class="tab-content">
+				  <div id="student" class="tab-pane fade in active">
+					<form action="login_check.php">
+					  <div class="imgcontainer">
+						<img src="loginuseravatar.png" alt="Avatar" class="avatar">
+					  </div>
+
+					  <div class="container">
+						<label><b>Username</b></label>
+						<input type="text" placeholder="Enter emailid" name="email" required>
+
+						<label><b>Password</b></label>
+						<input type="password" placeholder="Enter Password" name="psw" required>
+							
+						<button type="submit">Login</button>
+						<button onclick="document.getElementById('id01').style.display='block'" class='cancelbtn2'>Sign Up!</button>
+					  </div>
+					</form>
+				  </div>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+<div id="id01" class="modal">
+<div class="modal-content animate">
+  <form>
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+
+    <div style="padding:10px">
+    <h1>Sign UP!</h1>
+      <label><b>Name</b></label>
+      <input  type="text" placeholder="Enter Name" name="name" required>
+
+      <label><b>Email-Id</b></label>
+      <input  type="email" placeholder="Enter Email Id" name="emialid" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required> 
+      </div>
+    <div style="background-color:#f1f1f1; align:center; margin:10px" >
+       <button type="submit">Sign Up</button>
+	<button type="reset" class="cancelbtn2" >Clear</button>
+    </div>
+  </form>
+</div>
+</div>
+
