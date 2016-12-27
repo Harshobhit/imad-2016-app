@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Hostel Complaints</title>
+  <title>Football Blog</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="External/jquery.js"></script>    
   <script>
-// Get the modal
 var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
@@ -20,7 +18,7 @@ window.onclick = function(event) {
 </script>
   <style>
 /* Full-width input fields */
-input[type=text], input[type=password],input[type=number],input[type=email] {
+input[type=text], input[type=password],input[type=number],input[type=email],select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -143,34 +141,29 @@ span.psw {
        width: 100%;
     }
 }
+.nav-tabs>li.active>a{text-decoration: underline darkgreen;}
 </style>
 </head>
 <body>
-<div class="container">
-	<div class="row">
-		<img src='titlebar2.png' alt="Complaint Box" height="100px">
-	</div>
-</div>
-<div class="jumbotron" style="background-image:url('jumbotronbg.png')">
+<div class="jumbotron" style="background-image:url('https://i.ytimg.com/vi/-mNPS9PKchE/maxresdefault.jpg')">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-8"></div>
 			<div class="col-sm-4" style="background-color:white;padding:5px;">
 				<ul class="nav nav-tabs">
-				  <li class="active"><a data-toggle="tab" href="#student">Student Login</a></li>
-				  <li><a data-toggle="tab" href="#employee">Employee Login</a></li>
+				  <li class="active"><a data-toggle="tab" href="#student">Login</a></li>
 				</ul>
 				
 				<div class="tab-content">
 				  <div id="student" class="tab-pane fade in active">
-					<form action="action_page.php">
+					<form action="login_check.php">
 					  <div class="imgcontainer">
 						<img src="loginuseravatar.png" alt="Avatar" class="avatar">
 					  </div>
 
 					  <div class="container">
 						<label><b>Username</b></label>
-						<input type="text" placeholder="Enter Registration Number" name="uname" required>
+						<input type="text" placeholder="Enter emailid" name="email" required>
 
 						<label><b>Password</b></label>
 						<input type="password" placeholder="Enter Password" name="psw" required>
@@ -180,54 +173,14 @@ span.psw {
 					  </div>
 					</form>
 				  </div>
-				  <div id="employee" class="tab-pane fade">
-					<form action="action_page.php">
-					  <div class="imgcontainer">
-						<img src="loginuseravatar.png" alt="Avatar" class="avatar">
-					  </div>
-
-					  <div class="container">
-						<label><b>Employee ID</b></label>
-						<input type="text" placeholder="Enter Employee ID" name="uname" required>
-
-						<label><b>Password</b></label>
-						<input type="password" placeholder="Enter Password" name="psw" required>
-							
-						<button type="submit">Login</button>
-					  </div>
-					</form>
 				  </div>
 				</div>
-
-				
-				<!--The login form is here--					
-					<h2 style="text-indent:10px;">Login Form</h2>
-					<form action="action_page.php">
-					  <div class="imgcontainer">
-						<img src="loginuseravatar.png" alt="Avatar" class="avatar">
-					  </div>
-
-					  <div class="container">
-						<label><b>Username</b></label>
-						<input type="text" placeholder="Enter Registration Number" name="uname" required>
-
-						<label><b>Password</b></label>
-						<input type="password" placeholder="Enter Password" name="psw" required>
-							
-						<button type="submit">Login</button>
-						<button onclick="document.getElementById('id01').style.display='block'" class='cancelbtn2'>Sign Up!</button>
-					  </div>
-					</form>
-				<!---->
 			</div>
 		</div>
 	</div>
-</div>
-
-
 <div id="id01" class="modal">
 <div class="modal-content animate">
-  <form  action="action_page.php">
+  <form>
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
     </div>
@@ -235,18 +188,13 @@ span.psw {
     <div style="padding:10px">
     <h1>Sign UP!</h1>
       <label><b>Name</b></label>
-      <input  type="text" placeholder="Enter Name" name="uname" required>
+      <input  type="text" placeholder="Enter Name" name="name" required>
 
-      <label><b>Username</b></label>
-      <input  type="text" placeholder="Enter Registration Number" name="uname" required>
+      <label><b>Email-Id</b></label>
+      <input  type="email" placeholder="Enter Email Id" name="emialid" required>
 
       <label><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required> 
-      <label><b>Room</b></label>
-      <input  type="number" placeholder="Enter Room" name="uname" required>
-
-      <label><b>E-Mail</b></label>
-      <input type="email" placeholder="Email" name="psw" required> 
+      <input type="password" placeholder="Enter Password" name="password" required> 
       </div>
     <div style="background-color:#f1f1f1; align:center; margin:10px" >
        <button type="submit">Sign Up</button>
