@@ -58,9 +58,34 @@ app.get('/ui/style.css', function (req, res) {
 
 app.get('/blog', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'blog.html'));
+ window.onclick = function () {
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+      if (request.readyState === XMLHttpRequest.DONE) {
+          if (request.status === 200) {
+              alert('User created successfully');
+          } else {
+              alert('Could not register the user');
+          }
+      }
+    };
+    request.open('POST', '/create-user', true);
+    request.setRequestHeader('Content-Type', 'application/json');
+    request.send(JSON.stringify({name: '',emailid: '', password: ''}));       
+};
 });
-app.get('/blog', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'userlogin.php'));
+app.post('/create-user', function (req, res) {
+  var username = req.body.name;
+  var emailid = req.body.emailid;
+  var password = req.body.password;
+  pool.query('INSERT INTO "d" (name, emailid,password) VALUES ($1, $2,$3)', [username, emailid,password],         function (err, result) {
+           if(err) {
+              res.status(500).send(err.toString());
+           } 
+           else {
+              res.send('User successfully created: ' + username);
+           }
+  });
 });
 app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
