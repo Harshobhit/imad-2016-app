@@ -59,6 +59,9 @@ app.get('/ui/style.css', function (req, res) {
 app.get('/blog', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'blog.html'));
 });
+app.get('/blog', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'userlogin.php'));
+});
 app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
