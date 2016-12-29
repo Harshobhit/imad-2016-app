@@ -55,10 +55,7 @@ app.get('/userlogin', function (req, res) {
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
-
-app.get('/blog', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'blog.html'));
- window.onclick = function () {
+window.onclick = function () {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
       if (request.readyState === XMLHttpRequest.DONE) {
@@ -73,6 +70,8 @@ app.get('/blog', function (req, res) {
     request.setRequestHeader('Content-Type', 'application/json');
     request.send(JSON.stringify({name: '',emailid: '', password: ''}));       
 };
+app.get('/blog', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'blog.html'));
 });
 app.post('/create-user', function (req, res) {
   var username = req.body.name;
