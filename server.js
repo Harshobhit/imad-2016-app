@@ -58,7 +58,7 @@ app.get('/ui/style.css', function (req, res) {
 app.get('/blog', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'blog.html'));
 });
-app.post('/create-user', function (req, res) {
+app.get('/create-user', function (req, res) {
   var username = req.body.name;
   var emailid = req.body.emailid;
   var password = req.body.password;
