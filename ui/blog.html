@@ -194,7 +194,7 @@ span.psw {
 	</div>
 <div id="id01" class="modal">
 <div class="modal-content animate">
-  <form action="create-user" method="post">
+  <form>
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
     </div>
@@ -205,14 +205,14 @@ span.psw {
       <input  type="text" placeholder="Enter Name" name="name" required>
 
       <label><b>Email-Id</b></label>
-      <input  type="email" placeholder="Enter Email Id" name="emialid" required>
+      <input  type="email" placeholder="Enter Email Id" name="emailid" required>
 
       <label><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="password" required> 
       </div>
     <div style="background-color:#f1f1f1; align:center; margin:10px" >
        <button type="submit">Sign Up</button>
-	<button type="reset" class="cancelbtn2" >Clear</button>
+	<button type="reset" class="cancelbtn2" id="register" >Clear</button>
     </div>
   </form>
 </div>
