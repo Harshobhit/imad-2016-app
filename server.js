@@ -58,13 +58,14 @@ app.get('/ui/style.css', function (req, res) {
 app.get('/blog', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'blog.html'));
 });
-app.get('/create-user', function (req, res) {
+app.post('/create-user', function (req, res) {
   var username = req.body.name;
   var emailid = req.body.emailid;
   var password = req.body.password;
   pool.query('INSERT INTO "d" (name, emailid,password) VALUES ($1, $2,$3)', [username, emailid,password],         function (err, result) {
            if(err) {
               res.status(500).send(err.toString());
+              window.location='http://harshobhit.imad.hasura-app.io/blog';
            } 
            else {
               alert("Success");
